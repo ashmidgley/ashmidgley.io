@@ -37,7 +37,7 @@ export const KeyboardAnimation = () => {
             <div className="relative">
               <Image
                 className="absolute"
-                src={"/images/keyboard-1.png"}
+                src={"/images/keyboard-one.png"}
                 alt="keyboard"
                 width={2405}
                 height={987}
@@ -49,7 +49,7 @@ export const KeyboardAnimation = () => {
               {scrollProgress < 100 && (
                 <Image
                   className="absolute"
-                  src={"/images/keyboard-2.png"}
+                  src={"/images/keyboard-two.png"}
                   alt="keyboard"
                   width={2405}
                   height={987}
