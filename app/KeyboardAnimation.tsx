@@ -1,34 +1,68 @@
 "use client";
 
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import { useState } from "react";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 export const KeyboardAnimation = () => {
-  const { scrollY } = useScroll();
+  const elementRef = useRef();
+  const [scrollProgress, setScrollProgress] = useState(0);
 
-  const [src, setSrc] = useState("/images/Keyboard-1.png");
-  const [currIndex, setCurrIndex] = useState(1);
+  useScrollPosition(
+    ({ currPos }) => {
+      if (currPos.y > 0) return;
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (currIndex !== 12 && currIndex === 11 && latest > 5000) {
-      setSrc(`/images/Keyboard-12.png`);
-      setCurrIndex(12);
-      return;
-    }
-
-    const index = Math.ceil(latest / 300);
-    if (index !== 0 && index !== currIndex && index < 12) {
-      setSrc(`/images/Keyboard-${index}.png`);
-      setCurrIndex(index);
-    }
-  });
+      const progress = Math.ceil((Math.abs(currPos.y) / 5000) * 100);
+      if (progress !== scrollProgress) {
+        setScrollProgress(progress);
+      }
+    },
+    [],
+    elementRef
+  );
 
   return (
-    <div className="relative">
-    <motion.div className="fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2">
-        <Image src={src} alt="keyboard" width={2405} height={987} priority />
-      </motion.div>
+    <div ref={elementRef} className="h-[5000px] mb-[500px]">
+      <div className="sticky top-20">
+        <div className="mx-12 md:mx-24 xl:mx-80 flex flex-col justify-center items-center gap-12">
+          <div className="w-full flex flex-col justify-center">
+            <div className="bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div
+                className="bg-blue-600 h-2.5 rounded-full"
+                style={{ width: `${scrollProgress}%` }}
+              />
+            </div>
+          </div>
+          <div className="w-full flex flex-col justify-center">
+            <div className="relative">
+              <Image
+                className="absolute"
+                src={"/images/keyboard-1.png"}
+                alt="keyboard"
+                width={2405}
+                height={987}
+                priority
+                style={{
+                  opacity: 1 - scrollProgress / 100,
+                }}
+              />
+              {scrollProgress < 100 && (
+                <Image
+                  className="absolute"
+                  src={"/images/keyboard-2.png"}
+                  alt="keyboard"
+                  width={2405}
+                  height={987}
+                  priority
+                  style={{
+                    opacity: scrollProgress / 100,
+                  }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
