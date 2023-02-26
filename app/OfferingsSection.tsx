@@ -6,9 +6,6 @@ export const OfferingsSection = () => {
       <div className="flex flex-row justify-center">
         <p className="mx-6 md:mx-24 xl:mx-80 text-slate-300 text-4xl">
           <span>{"I build sites "}</span>
-          <span className="inline-block">
-            <CursorIcon />
-          </span>
           <span>{" using "}</span>
           <a
             href="https://www.typescriptlang.org"

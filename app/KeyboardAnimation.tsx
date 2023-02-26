@@ -12,7 +12,9 @@ export const KeyboardAnimation = () => {
   const [imageHeight, setImageHeight] = useState(0);
 
   useEffect(() => {
-    setImageHeight(imageRef.current.clientHeight);
+    imageRef &&
+      imageRef.current &&
+      setImageHeight(imageRef.current["clientHeight"]);
   }, []);
 
   useScrollPosition(
