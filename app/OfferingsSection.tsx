@@ -1,10 +1,14 @@
+import { CursorIcon } from "./CursorIcon";
+
 export const OfferingsSection = () => {
   return (
     <div className="flex flex-col h-screen justify-center">
       <div className="flex flex-row justify-center">
-        <p className="mx-12 md:mx-24 xl:mx-80 text-slate-300 text-4xl">
+        <p className="mx-6 md:mx-24 xl:mx-80 text-slate-300 text-4xl">
           <span>{"I build sites "}</span>
-          <span className="text-green-300 underline">{"ICON"}</span>
+          <span className="inline-block">
+            <CursorIcon />
+          </span>
           <span>{" using "}</span>
           <a
             href="https://www.typescriptlang.org"

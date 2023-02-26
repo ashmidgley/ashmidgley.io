@@ -1,12 +1,19 @@
 "use client";
 
-import { RefObject, useRef, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 export const KeyboardAnimation = () => {
   const elementRef = useRef();
+  const imageRef = useRef();
+
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [imageHeight, setImageHeight] = useState(0);
+
+  useEffect(() => {
+    setImageHeight(imageRef.current.clientHeight);
+  }, []);
 
   useScrollPosition(
     ({ currPos }) => {
@@ -22,9 +29,19 @@ export const KeyboardAnimation = () => {
   );
 
   return (
-    <div ref={elementRef as unknown as RefObject<HTMLDivElement>} className="h-[5000px] mb-[500px]">
-      <div className="sticky top-20">
-        <div className="mx-12 md:mx-24 xl:mx-80 flex flex-col justify-center items-center gap-12">
+    <div
+      ref={elementRef as unknown as RefObject<HTMLDivElement>}
+      className="h-[5000px] my-[500px]"
+    >
+      <div
+        style={{
+          position: "sticky",
+          top: "50%",
+          left: "50%",
+          transform: `translateY(-${imageHeight / 2}px)`,
+        }}
+      >
+        <div className="mx-6 md:mx-24 xl:mx-80 flex flex-col justify-center items-center gap-12">
           <div className="w-full flex flex-col justify-center">
             <div className="bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
               <div
@@ -36,6 +53,7 @@ export const KeyboardAnimation = () => {
           <div className="w-full flex flex-col justify-center">
             <div className="relative">
               <Image
+                ref={imageRef as unknown as RefObject<HTMLImageElement>}
                 className="absolute"
                 src={"/images/keyboard-one.png"}
                 alt="keyboard"
