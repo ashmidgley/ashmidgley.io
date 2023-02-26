@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { RefObject, useRef, useState } from "react";
 import Image from "next/image";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
@@ -22,7 +22,7 @@ export const KeyboardAnimation = () => {
   );
 
   return (
-    <div ref={elementRef} className="h-[5000px] mb-[500px]">
+    <div ref={elementRef as unknown as RefObject<HTMLDivElement>} className="h-[5000px] mb-[500px]">
       <div className="sticky top-20">
         <div className="mx-12 md:mx-24 xl:mx-80 flex flex-col justify-center items-center gap-12">
           <div className="w-full flex flex-col justify-center">
