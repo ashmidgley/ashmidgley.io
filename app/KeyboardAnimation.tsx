@@ -3,6 +3,8 @@
 import { RefObject, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import { motion } from "framer-motion";
+import { dropIn } from "./motion.utils";
 
 export const KeyboardAnimation = () => {
   const elementRef = useRef();
@@ -31,9 +33,13 @@ export const KeyboardAnimation = () => {
   );
 
   return (
-    <div
+    <motion.div
       ref={elementRef as unknown as RefObject<HTMLDivElement>}
       className="h-[5000px] my-[500px]"
+      variants={dropIn}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
       <div
         style={{
@@ -53,7 +59,11 @@ export const KeyboardAnimation = () => {
             </div>
           </div>
           <div className="w-full flex flex-col justify-center">
-            <div className="relative">
+            <motion.div
+              className="relative"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Image
                 ref={imageRef as unknown as RefObject<HTMLImageElement>}
                 className="absolute"
@@ -79,10 +89,10 @@ export const KeyboardAnimation = () => {
                   }}
                 />
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
