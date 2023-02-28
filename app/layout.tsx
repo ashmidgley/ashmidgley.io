@@ -1,5 +1,7 @@
-import './globals.css'
+import "./globals.css";
 import { Space_Grotesk } from "@next/font/google";
+
+import { AnalyticsWrapper } from "./components/Analytics";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -9,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className={spaceGrotesk.className}>
@@ -18,7 +20,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        {children}
+        <AnalyticsWrapper />
+      </body>
     </html>
-  )
+  );
 }

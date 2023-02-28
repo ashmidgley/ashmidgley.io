@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
-import { KeyboardAnimation } from "./KeyboardAnimation";
-import { OfferingsSection } from "./OfferingsSection";
-import { OtherOfferingsSection } from "./OtherOfferingsSection";
+import { KeyboardAnimation } from "./components/KeyboardAnimation";
+import { OfferingsSection } from "./components/OfferingsSection";
+import { OtherOfferingsSection } from "./components/OtherOfferingsSection";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { dropIn } from "./motion.utils";
+import { dropIn } from "../utils/motion.utils";
 
 export const OtherOfferingsSection = () => {
   return (
