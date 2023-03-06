@@ -30,7 +30,7 @@ export const OfferingsSection = () => {
           <a href="https://vercel.com" className="text-white font-semibold">
             {"Vercel"}
           </a>
-          <span>{". Have a big idea but "}</span>
+          <span>{". Have an idea but "}</span>
           <a
             href="https://calendly.com/ashmidgley/chat"
             className="text-yellow-300 underline"

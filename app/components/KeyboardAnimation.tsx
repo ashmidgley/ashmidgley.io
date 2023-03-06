@@ -61,7 +61,6 @@ export const KeyboardAnimation = () => {
           <div className="w-full flex flex-col justify-center">
             <motion.div
               className="relative"
-              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <Image
