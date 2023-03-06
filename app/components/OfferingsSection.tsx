@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { dropIn } from "../utils/motion.utils";
+import { CursorIcon } from "./CursorIcon";
 
 export const OfferingsSection = () => {
   return (
@@ -15,6 +16,9 @@ export const OfferingsSection = () => {
       >
         <p className="mx-6 md:mx-24 xl:mx-80 text-slate-300 text-lg sm:text-4xl">
           <span>{"I build sites "}</span>
+          <span className="inline-block">
+            <CursorIcon />
+          </span>
           <span>{" using "}</span>
           <a
             href="https://www.typescriptlang.org"

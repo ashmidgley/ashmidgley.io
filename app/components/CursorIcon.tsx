@@ -1,14 +1,14 @@
 import { FC } from "react";
 
 interface CursorIconProps {
-  width?: number;
-  height?: number;
+  width?: string;
+  height?: string;
   fill?: string;
 }
 
 export const CursorIcon: FC<CursorIconProps> = ({
-  width = "285.97",
-  height = "294.57",
+  width = "23.54",
+  height = "24.24",
   fill = "#00fd35",
 }) => (
   <svg
@@ -18,8 +18,8 @@ export const CursorIcon: FC<CursorIconProps> = ({
     viewBox={`0 0 ${width} ${height}`}
   >
     <polygon
-      className={`fill-[${fill}]`}
-      points="0 0 114.54 294.57 143.58 147.91 285.97 117.98 0 0"
+      points="0 0 9.43 24.24 11.82 12.17 23.54 9.71 0 0"
+      style={{ fill: fill }}
     />
   </svg>
 );
