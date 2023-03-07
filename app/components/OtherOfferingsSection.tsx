@@ -15,12 +15,12 @@ export const OtherOfferingsSection = () => {
       >
         <p className="mx-6 md:mx-24 xl:mx-80 text-slate-300 text-lg sm:text-4xl">
           <span>{"I also offer independant programming services. "}</span>
-          <span className="text-white font-semibold">
+          <span className="text-white font-semibold hover:italic">
             {"Need an extra pair of hands on an existing project? "}
           </span>
           <a
             href="https://calendly.com/ashmidgley/chat"
-            className="text-yellow-300 underline"
+            className="text-yellow-300 underline hover:line-through"
           >
             {"Let's talk"}
           </a>
