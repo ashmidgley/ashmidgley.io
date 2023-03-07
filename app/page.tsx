@@ -1,16 +1,22 @@
 import styles from "./page.module.css";
-import { KeyboardAnimation } from "./components/KeyboardAnimation";
-import { OfferingsSection } from "./components/OfferingsSection";
-import { OtherOfferingsSection } from "./components/OtherOfferingsSection";
-import { Nav } from "./components/Nav";
+
+import {
+  Landing,
+  Nav,
+  Offerings,
+  OtherOfferings,
+  SelectedWork,
+  Testimonials,
+} from "./components";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <Nav />
-      <OfferingsSection />
-      <KeyboardAnimation />
-      <OtherOfferingsSection />
+      <Offerings />
+      <SelectedWork />
+      <OtherOfferings />
+      <Testimonials />
     </main>
   );
 }

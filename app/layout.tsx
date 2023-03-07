@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import localFont from "@next/font/local";
-import { AnalyticsWrapper } from "./components/Analytics";
+import { AnalyticsWrapper } from "./components";
 
 const sharpGrotesk = localFont({
   src: [
