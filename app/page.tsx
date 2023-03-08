@@ -1,15 +1,12 @@
 "use client";
 
-import styles from "./page.module.css";
-
+import { Offerings } from "../components/Offerings";
+import { SelectedWork } from "../components/SelectedWork";
+import { OtherOfferings } from "../components/OtherOfferings";
+import { Testimonials } from "../components/Testimonials";
 import { motion } from "framer-motion";
-import { Nav } from "./components/Nav";
-import { Offerings } from "./components/Offerings";
-import { SelectedWork } from "./components/SelectedWork";
-import { OtherOfferings } from "./components/OtherOfferings";
-import { Testimonials } from "./components/Testimonials";
 
-const dropIn = {
+const fadeIn = {
   initial: {
     opacity: 0,
   },
@@ -26,21 +23,18 @@ const dropIn = {
     opacity: 0,
   },
 };
-
 export default function Home() {
   return (
-    <motion.main
-      className={styles.main}
-      variants={dropIn}
+    <motion.div
+      variants={fadeIn}
       initial="initial"
       animate="animate"
       exit="exit"
     >
-      <Nav />
       <Offerings />
       <SelectedWork />
       <OtherOfferings />
       <Testimonials />
-    </motion.main>
+    </motion.div>
   );
 }
