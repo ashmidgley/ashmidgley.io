@@ -1,19 +1,10 @@
-"use client";
-
 import { motion } from "framer-motion";
-import { dropIn } from "../utils/motion.utils";
 import { CursorIcon } from "./CursorIcon";
 
 export const Offerings = () => {
   return (
     <div className="flex flex-col h-screen justify-center">
-      <motion.div
-        className="flex flex-row justify-center"
-        variants={dropIn}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
+      <div className="flex flex-row justify-center">
         <p className="mx-6 md:mx-24 xl:mx-80 text-slate-300 text-lg sm:text-4xl">
           <span>{"I build sites "}</span>
           <motion.a
@@ -74,7 +65,7 @@ export const Offerings = () => {
           </span>
           <span>{"."}</span>
         </p>
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -1,8 +1,5 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { dropIn } from "../utils/motion.utils";
 import { KeyOne } from "./KeyOne";
 import { KeyTwo } from "./KeyTwo";
 
@@ -23,13 +20,7 @@ export const Nav = () => {
   }, []);
 
   return (
-    <motion.div
-      className="fixed w-full mt-6"
-      variants={dropIn}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
+    <div className="fixed w-full mt-6">
       <div
         className="flex justify-center sm:justify-between sm:mx-6 md:mx-24 xl:mx-80"
         style={{
@@ -81,6 +72,6 @@ export const Nav = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };

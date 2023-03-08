@@ -1,10 +1,7 @@
-"use client";
-
 import { RefObject, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { motion } from "framer-motion";
-import { dropIn } from "../utils/motion.utils";
 
 export const SelectedWork = () => {
   const elementRef = useRef();
@@ -33,13 +30,9 @@ export const SelectedWork = () => {
   );
 
   return (
-    <motion.div
+    <div
       ref={elementRef as unknown as RefObject<HTMLDivElement>}
       className="h-[5000px] my-[500px]"
-      variants={dropIn}
-      initial="initial"
-      animate="animate"
-      exit="exit"
     >
       <div
         style={{
@@ -89,6 +82,6 @@ export const SelectedWork = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
