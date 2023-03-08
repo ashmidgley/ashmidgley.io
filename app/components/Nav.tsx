@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { KeyOne } from "./KeyOne";
-import { KeyTwo } from "./KeyTwo";
+import { AKey } from "./AKey";
+import { MKey } from "./MKey";
+import { MKeyFlipped } from "./MKeyFlipped";
 
 export const Nav = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -30,30 +31,41 @@ export const Nav = () => {
         <motion.a href="/">
           <motion.div
             className="inline-block"
-            animate={{ y: [0, 20, 0] }}
-            transition={{
-              duration: 0.4,
-              times: [0, 0.4, 1],
-              delay: 0.4,
-              repeat: Infinity,
-              repeatDelay: 3,
-            }}
+            animate={scrollPosition > 0 ? undefined : { y: [0, 20, 0] }}
+            transition={
+              scrollPosition > 0
+                ? undefined
+                : {
+                    duration: 0.4,
+                    times: [0, 0.4, 1],
+                    delay: 0.4,
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                  }
+            }
           >
-            <KeyOne />
+            <AKey />
           </motion.div>
-          <motion.div
-            className="inline-block -ml-9"
-            animate={{ y: [10, 30, 10] }}
-            transition={{
-              duration: 0.4,
-              times: [0, 0.4, 1],
-              delay: 0.8,
-              repeat: Infinity,
-              repeatDelay: 3,
-            }}
-          >
-            <KeyTwo />
-          </motion.div>
+
+          {scrollPosition === 0 ? (
+            <motion.div
+              className="inline-block -ml-7"
+              animate={{ y: [13, 33, 13] }}
+              transition={{
+                duration: 0.4,
+                times: [0, 0.4, 1],
+                delay: 0.8,
+                repeat: Infinity,
+                repeatDelay: 3,
+              }}
+            >
+              <MKey />
+            </motion.div>
+          ) : (
+            <div className="inline-block translate-y-2 -ml-6">
+              <MKeyFlipped />
+            </div>
+          )}
         </motion.a>
         <div className="hidden sm:flex sm:flex-col sm:justify-center">
           <div className="flex gap-6">
