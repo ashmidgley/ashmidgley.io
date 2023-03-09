@@ -1,20 +1,34 @@
 import { RefObject, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { motion } from "framer-motion";
+import { ProjectSummary } from "./ProjectSummary";
+
+const getGeoBuffOpacity = (scrollProgress: number): number => {
+  return scrollProgress > 2 ? 1 : 0;
+};
+
+const getGeoBuffX = (scrollProgress: number): number => {
+  return scrollProgress >= 48 ? 2000 : 0;
+};
+
+const getNomadsOpacity = (scrollProgress: number): number => {
+  return scrollProgress < 98 ? 1 : 0;
+};
+
+const getNomadsX = (scrollProgress: number): number => {
+  return scrollProgress < 52 ? 2000 : 0;
+};
 
 export const SelectedWork = () => {
   const elementRef = useRef();
-  const imageRef = useRef();
 
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [imageHeight, setImageHeight] = useState(0);
 
-  useEffect(() => {
-    imageRef &&
-      imageRef.current &&
-      setImageHeight(imageRef.current["clientHeight"]);
-  }, []);
+  const [geoBuffOpacity, setGeoBuffOpacity] = useState(0);
+  const [geoBuffX, setGeoBuffX] = useState(0);
+
+  const [nomadsOpacity, setNomadsOpacity] = useState(0);
+  const [nomadsX, setNomadsX] = useState(0);
 
   useScrollPosition(
     ({ currPos }) => {
@@ -29,7 +43,56 @@ export const SelectedWork = () => {
     elementRef
   );
 
-  return (
+  useEffect(() => {
+    setGeoBuffOpacity(getGeoBuffOpacity(scrollProgress));
+    setGeoBuffX(getGeoBuffX(scrollProgress));
+    setNomadsOpacity(getNomadsOpacity(scrollProgress));
+    setNomadsX(getNomadsX(scrollProgress));
+  }, [scrollProgress]);
+
+  const geoBuffTile = (
+    <ProjectSummary
+      href="https://geobuff.com"
+      title="geobuff.com"
+      imageUrl="/images/geobuff.png"
+      imageAlt="GeoBuff"
+      imageWidth={576}
+      imageHeight={312}
+      highlights={[
+        "25,000+ quiz plays",
+        "220+ users",
+        "220+ iOS downloads",
+        "10 languages",
+      ]}
+      technologies={[
+        "Next.js",
+        "TypeScript",
+        "Chakra UI",
+        "Vercel",
+        "Go",
+        "Google Cloud",
+        "Circle CI",
+        "PostgreSQL",
+        "Digital Ocean",
+        "React Native",
+      ]}
+    />
+  );
+
+  const nomadsTile = (
+    <ProjectSummary
+      href="https://rationalnomads.com"
+      title="rationalnomads.com"
+      imageUrl="/images/nomads.png"
+      imageAlt="Rational Nomads"
+      imageWidth={574}
+      imageHeight={296}
+      highlights={["Crafted for the team at Rational Nomads"]}
+      technologies={["Next.js", "TypeScript", "Chakra UI", "Vercel"]}
+    />
+  );
+
+  const desktop = (
     <div
       ref={elementRef as unknown as RefObject<HTMLDivElement>}
       className="h-[5000px] my-[500px]"
@@ -39,49 +102,47 @@ export const SelectedWork = () => {
           position: "sticky",
           top: "50%",
           left: "50%",
-          transform: `translateY(-${imageHeight / 2}px)`,
+          transform: `translateY(-250px)`,
         }}
       >
-        <div className="flex flex-col justify-center items-center gap-12">
+        <h1 className="text-lg sm:text-4xl text-center mb-24">Selected Work</h1>
+        <div className="flex flex-col justify-center items-center gap-24">
           <div className="w-full flex flex-col justify-center">
-            <div className="bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-              <div
-                className="bg-blue-600 h-2.5 rounded-full"
-                style={{ width: `${scrollProgress}%` }}
-              />
+            <div className="relative">
+              <motion.div
+                className="absolute h-[500px] w-full"
+                animate={{ x: geoBuffX, opacity: geoBuffOpacity }}
+                transition={{ duration: 1 }}
+              >
+                {geoBuffTile}
+              </motion.div>
+              <motion.div
+                className="absolute h-[500px] w-full"
+                animate={{ x: nomadsX, opacity: nomadsOpacity }}
+                transition={{ duration: 1 }}
+              >
+                {nomadsTile}
+              </motion.div>
             </div>
-          </div>
-          <div className="w-full flex flex-col justify-center">
-            <motion.div className="relative" whileTap={{ scale: 0.9 }}>
-              <Image
-                ref={imageRef as unknown as RefObject<HTMLImageElement>}
-                className="absolute"
-                src={"/images/keyboard-one.png"}
-                alt="keyboard"
-                width={2405}
-                height={987}
-                priority
-                style={{
-                  opacity: 1 - scrollProgress / 100,
-                }}
-              />
-              {scrollProgress < 100 && (
-                <Image
-                  className="absolute"
-                  src={"/images/keyboard-two.png"}
-                  alt="keyboard"
-                  width={2405}
-                  height={987}
-                  priority
-                  style={{
-                    opacity: scrollProgress / 100,
-                  }}
-                />
-              )}
-            </motion.div>
           </div>
         </div>
       </div>
     </div>
+  );
+
+  const mobile = (
+    <div>
+      <h1 className="text-lg text-center mb-12">Selected Work</h1>
+      <div className="flex flex-col justify-center items-center gap-24">
+        {geoBuffTile}
+        {nomadsTile}
+      </div>
+    </div>
+  );
+  return (
+    <>
+      <div className="hidden sm:block">{desktop}</div>
+      <div className="block sm:hidden">{mobile}</div>
+    </>
   );
 };
