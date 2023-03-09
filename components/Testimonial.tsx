@@ -19,7 +19,7 @@ export const Testimonial: FC<TestimonialProps> = ({
 }) => {
   return (
     <div className={clsx("flex flex-col gap-6", className)}>
-      <p className="font-semibold">{message}</p>
+      <p className="text-sm sm:text-lg font-semibold">{message}</p>
       <div className="flex gap-6">
         <Image
           className="rounded-full"
@@ -29,7 +29,7 @@ export const Testimonial: FC<TestimonialProps> = ({
           height={80}
         />
         <div className="flex flex-col justify-center">
-          <div className="flex text-sm">
+          <div className="flex text-xs sm:text-sm">
             <span className="mr-1">{name}</span>
             <span>{"•"}</span>
             <span className="italic ml-1">{title}</span>

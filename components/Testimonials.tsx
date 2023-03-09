@@ -4,10 +4,10 @@ export const Testimonials = () => {
   return (
     <div className="flex flex-col h-screen justify-center">
       <div>
-        <h1 className="text-center text-3xl mb-24">
+        <h1 className="text-center text-lg sm:text-3xl mb-12 sm:mb-24">
           A word from my clients...
         </h1>
-        <div className="flex flex-col sm:flex-row justify-center gap-24">
+        <div className="flex flex-col sm:flex-row justify-center gap-12 sm:gap-24">
           <Testimonial
             className="w-full sm:w-1/2"
             message="Nem consequam faces con plabore, quodit, ut libus ullorrovid unt molum, sam, vellique doluptur, toreheni autem quasit aborrovit reperum is aut et rerferro."

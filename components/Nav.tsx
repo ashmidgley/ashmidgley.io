@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AKey } from "./AKey";
@@ -71,18 +72,18 @@ export const Nav = () => {
         </motion.a>
         <div className="hidden sm:flex sm:flex-col sm:justify-center">
           <div className="flex gap-6">
-            <a
+            <Link
               href="https://github.com/ashmidgley"
               className="hover:line-through"
             >
               GitHub
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.linkedin.com/in/ashley-midgley/"
               className="hover:line-through"
             >
               LinkedIn
-            </a>
+            </Link>
           </div>
         </div>
       </div>

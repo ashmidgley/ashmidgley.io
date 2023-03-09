@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { CursorIcon } from "./CursorIcon";
 
@@ -15,33 +16,33 @@ export const Offerings = () => {
             <CursorIcon />
           </motion.a>
           <span>{" using "}</span>
-          <a
+          <Link
             href="https://www.typescriptlang.org"
             className="text-white font-semibold hover:line-through"
           >
             {"TypeScript"}
-          </a>
+          </Link>
           <span>{", "}</span>
-          <a
+          <Link
             href="https://nextjs.org"
             className="text-white font-semibold hover:line-through"
           >
             {"Next.js"}
-          </a>
+          </Link>
           <span>{" and "}</span>
-          <a
+          <Link
             href="https://vercel.com"
             className="text-white font-semibold hover:line-through"
           >
             {"Vercel"}
-          </a>
+          </Link>
           <span>{". Have an idea but "}</span>
-          <a
+          <Link
             href="https://calendly.com/ashmidgley/chat"
             className="text-yellow-300 underline hover:line-through"
           >
             {"don't know where to start?"}
-          </a>
+          </Link>
           <span>
             {" Together we can coordinate with my network of highly skilled "}
           </span>
@@ -53,12 +54,12 @@ export const Offerings = () => {
             {"UI/UX designers"}
           </span>
           <span>{" to take your "}</span>
-          <a
+          <Link
             href="http://paulgraham.com/ds.html"
             className="text-green-300 underline hover:line-through"
           >
             {"vision"}
-          </a>
+          </Link>
           <span>{" from "}</span>
           <span className="text-white font-semibold hover:italic">
             {"idea to inception"}
