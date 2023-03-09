@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FC } from "react";
 import clsx from "clsx";
+import { isMobile } from "react-device-detect";
 
 interface ProjectSummaryProps {
   className?: string;
@@ -36,7 +37,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
     >
       <div className="flex flex-col justify-center sm:w-2/4">
         <Link href={href}>
-          <motion.div whileHover={{ scale: 1.1 }}>
+          <motion.div whileHover={isMobile ? undefined : { scale: 1.1 }}>
             <Image
               className="rounded-lg"
               src={imageUrl}
@@ -47,16 +48,18 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
           </motion.div>
         </Link>
       </div>
-      <div className="flex flex-col justify-center items-center sm:w-2/4 gap-6">
+      <div className="flex flex-col justify-center sm:w-2/4 gap-6">
         <Link href={href}>
-          <h2 className="text-2xl font-semibold hover:line-through">{title}</h2>
+          <h2 className="text-2xl font-semibold text-center sm:text-left hover:line-through">
+            {title}
+          </h2>
         </Link>
         <ul className="flex flex-col gap-3 text-md sm:text-2xl">
           {highlights.map((highlight) => (
             <li key={highlight}>{highlight}</li>
           ))}
         </ul>
-        <div className="flex flex-wrap justify-center gap-y-3">
+        <div className="flex flex-wrap gap-y-3">
           {technologies.map((technology) => (
             <span
               key={technology}
