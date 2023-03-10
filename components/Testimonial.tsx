@@ -27,6 +27,7 @@ export const Testimonial: FC<TestimonialProps> = ({
           alt={`${name} profile`}
           width={80}
           height={80}
+          priority
         />
         <div className="flex flex-col justify-center">
           <div className="flex text-xs sm:text-sm">

@@ -23,6 +23,7 @@
     "react": "18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "typescript": "4.9.5"
   },
   "devDependencies": {

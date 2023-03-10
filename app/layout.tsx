@@ -1,4 +1,5 @@
 import "./globals.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import localFont from "@next/font/local";
 import { AnalyticsWrapper } from "../components/AnalyticsWrapper";

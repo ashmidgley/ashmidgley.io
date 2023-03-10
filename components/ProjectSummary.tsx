@@ -44,6 +44,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
               alt={imageAlt}
               width={imageWidth}
               height={imageHeight}
+              priority
             />
           </motion.div>
         </Link>
