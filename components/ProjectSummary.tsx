@@ -39,7 +39,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
         <Link href={href}>
           <motion.div whileHover={isMobile ? undefined : { scale: 1.1 }}>
             <Image
-              className="rounded-lg"
+              className="rounded-lg px-6 sm:px-0"
               src={imageUrl}
               alt={imageAlt}
               width={imageWidth}
@@ -60,7 +60,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
             <li key={highlight}>{highlight}</li>
           ))}
         </ul>
-        <div className="flex flex-wrap gap-y-3">
+        <div className="flex flex-wrap justify-center sm:justify-start gap-y-3">
           {technologies.map((technology) => (
             <span
               key={technology}

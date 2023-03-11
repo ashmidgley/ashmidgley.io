@@ -20,9 +20,9 @@ export const Testimonial: FC<TestimonialProps> = ({
   return (
     <div className={clsx("flex flex-col gap-6", className)}>
       <p className="text-sm sm:text-lg font-semibold">{message}</p>
-      <div className="flex gap-6">
+      <div className="flex justify-center sm:justify-start gap-6">
         <Image
-          className="rounded-full"
+          className="rounded-full max-w-[80px] sm:max-w-none"
           src={imageUrl}
           alt={`${name} profile`}
           width={80}
