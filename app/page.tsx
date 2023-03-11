@@ -6,24 +6,8 @@ import { OtherOfferings } from "../components/OtherOfferings";
 import { Testimonials } from "../components/Testimonials";
 import { motion } from "framer-motion";
 import { SelectedWorkMobile } from "@/components/SelectedWorkMobile";
+import { fadeIn } from "@/utils/motion.utils";
 
-const fadeIn = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      duration: 1,
-      type: "spring",
-      damping: 100,
-      stiffness: 500,
-    },
-  },
-  exit: {
-    opacity: 0,
-  },
-};
 export default function Home() {
   return (
     <motion.div

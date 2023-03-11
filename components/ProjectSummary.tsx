@@ -39,7 +39,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
         <Link href={href}>
           <motion.div whileHover={isMobile ? undefined : { scale: 1.1 }}>
             <Image
-              className="rounded-lg px-6 sm:px-0"
+              className="rounded-lg"
               src={imageUrl}
               alt={imageAlt}
               width={imageWidth}
@@ -51,11 +51,11 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
       </div>
       <div className="flex flex-col justify-center sm:w-2/4 gap-6">
         <Link href={href}>
-          <h2 className="text-2xl font-semibold text-center sm:text-left hover:line-through">
+          <h2 className="text-yellow-300 underline text-lg sm:text-2xl text-center sm:text-left hover:line-through">
             {title}
           </h2>
         </Link>
-        <ul className="flex flex-col gap-3 text-md sm:text-2xl">
+        <ul className="flex flex-col gap-3 text-sm sm:text-2xl">
           {highlights.map((highlight) => (
             <li key={highlight}>{highlight}</li>
           ))}
