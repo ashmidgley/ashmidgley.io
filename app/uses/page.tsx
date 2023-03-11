@@ -1,7 +1,3 @@
-"use client";
-
-import { fadeIn } from "@/utils/motion.utils";
-import { motion } from "framer-motion";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,13 +7,7 @@ export const metadata: Metadata = {
 
 export default function Uses() {
   return (
-    <motion.div
-      className="h-screen pt-48"
-      variants={fadeIn}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
+    <div className="h-screen pt-48">
       <h1 className="font-bold text-3xl mb-8">Uses</h1>
       <p className="mt-2 mb-8">{`List of tech I'm currently using.`}</p>
       <div className="flex flex-col gap-12">
@@ -46,6 +36,6 @@ export default function Uses() {
           </ul>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
