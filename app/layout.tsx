@@ -78,7 +78,7 @@ export default function RootLayout({
     >
       <body>
         <Nav />
-        <main className="mx-6 md:mx-24 xl:mx-80">
+        <main>
           {children}
           <AnalyticsWrapper />
         </main>

@@ -1,10 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CursorIcon } from "./CursorIcon";
 
 export const Offerings = () => {
   return (
-    <div className="flex flex-col h-screen justify-center">
+    <div className="flex flex-col h-screen justify-center mx-6 md:mx-24 xl:mx-80">
       <div className="flex flex-row justify-center">
         <p className="text-slate-300 text-lg sm:text-4xl">
           <span>{"I build sites "}</span>
@@ -39,7 +41,7 @@ export const Offerings = () => {
           <span>{". Have an idea but "}</span>
           <Link
             href="https://calendly.com/ashmidgley/chat"
-            className="text-yellow-300 underline hover:line-through"
+            className="text-[#00fd35] underline hover:line-through"
           >
             {"don't know where to start?"}
           </Link>
@@ -56,7 +58,7 @@ export const Offerings = () => {
           <span>{" to take your "}</span>
           <Link
             href="http://paulgraham.com/ds.html"
-            className="text-green-300 underline hover:line-through"
+            className="text-[#00fd35] underline hover:line-through"
           >
             {"vision"}
           </Link>

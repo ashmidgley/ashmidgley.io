@@ -19,7 +19,7 @@ export const Testimonial: FC<TestimonialProps> = ({
 }) => {
   return (
     <div className={clsx("flex flex-col gap-6", className)}>
-      <p className="text-sm sm:text-lg font-semibold">{message}</p>
+      <p className="text-sm sm:text-lg font-semibold text-left">{message}</p>
       <div className="flex justify-center sm:justify-start gap-6">
         <Image
           className="rounded-full max-w-[80px] sm:max-w-none"
@@ -29,12 +29,9 @@ export const Testimonial: FC<TestimonialProps> = ({
           height={80}
           priority
         />
-        <div className="flex flex-col justify-center">
-          <div className="flex text-xs sm:text-sm">
-            <span className="mr-1">{name}</span>
-            <span>{"•"}</span>
-            <span className="italic ml-1">{title}</span>
-          </div>
+        <div className="flex flex-col justify-center text-xs sm:text-sm gap-1 text-left">
+          <span className="font-semibold">{name}</span>
+          <span className="italic">{title}</span>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const OtherOfferings = () => {
   return (
-    <div className="flex flex-col h-screen justify-center gap-12 sm:gap-24">
+    <div className="flex flex-col h-screen justify-center gap-12 sm:gap-24 mx-6 md:mx-24 xl:mx-80">
       <div className="flex flex-row justify-center">
         <p className="text-slate-300 text-lg sm:text-4xl">
           <span>{"I also offer independant programming services. "}</span>
@@ -12,7 +12,7 @@ export const OtherOfferings = () => {
           </span>
           <Link
             href="https://calendly.com/ashmidgley/chat"
-            className="text-yellow-300 underline hover:line-through"
+            className="text-[#00fd35] underline hover:line-through"
           >
             {"Let's talk"}
           </Link>

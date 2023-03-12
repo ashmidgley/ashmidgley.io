@@ -1,7 +1,10 @@
+"use client";
+
 import { RefObject, useEffect, useRef, useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { motion } from "framer-motion";
-import { ProjectSummary } from "./ProjectSummary";
+import { GeoBuffSummary } from "./GeoBuffSummary";
+import { NomadsSummary } from "./NomadsSummary";
 
 const getGeoBuffOpacity = (scrollProgress: number): number => {
   return scrollProgress > 2 ? 1 : 0;
@@ -53,7 +56,7 @@ export const SelectedWorkDesktop = () => {
   return (
     <div
       ref={elementRef as unknown as RefObject<HTMLDivElement>}
-      className="h-[5000px] my-[500px]"
+      className="h-[5000px] my-[500px] mx-24"
     >
       <div
         style={{
@@ -63,7 +66,9 @@ export const SelectedWorkDesktop = () => {
           transform: `translateY(-250px)`,
         }}
       >
-        <h1 className="text-lg sm:text-4xl text-center mb-24">Selected Work</h1>
+        <h1 className="text-lg sm:text-4xl text-center font-semibold mb-24">
+          Selected Work
+        </h1>
         <div className="flex flex-col justify-center items-center gap-24">
           <div className="w-full flex flex-col justify-center">
             <div className="relative">
@@ -72,53 +77,14 @@ export const SelectedWorkDesktop = () => {
                 animate={{ x: geoBuffX, opacity: geoBuffOpacity }}
                 transition={{ duration: 1 }}
               >
-                <ProjectSummary
-                  href="https://geobuff.com"
-                  title="geobuff.com"
-                  imageUrl="/images/geobuff.png"
-                  imageAlt="GeoBuff"
-                  imageWidth={576}
-                  imageHeight={312}
-                  highlights={[
-                    "25,000+ quiz plays",
-                    "220+ users",
-                    "220+ iOS downloads",
-                    "10 languages",
-                  ]}
-                  technologies={[
-                    "Next.js",
-                    "TypeScript",
-                    "Chakra UI",
-                    "Vercel",
-                    "Go",
-                    "Google Cloud",
-                    "Circle CI",
-                    "PostgreSQL",
-                    "Digital Ocean",
-                    "React Native",
-                  ]}
-                />
+                <GeoBuffSummary />
               </motion.div>
               <motion.div
                 className="absolute h-[500px] w-full"
                 animate={{ x: nomadsX, opacity: nomadsOpacity }}
                 transition={{ duration: 1 }}
               >
-                <ProjectSummary
-                  href="https://rationalnomads.com"
-                  title="rationalnomads.com"
-                  imageUrl="/images/nomads.png"
-                  imageAlt="Rational Nomads"
-                  imageWidth={574}
-                  imageHeight={296}
-                  highlights={["Crafted for the team at Rational Nomads"]}
-                  technologies={[
-                    "Next.js",
-                    "TypeScript",
-                    "Chakra UI",
-                    "Vercel",
-                  ]}
-                />
+                <NomadsSummary />
               </motion.div>
             </div>
           </div>

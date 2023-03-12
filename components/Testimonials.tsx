@@ -1,11 +1,13 @@
+"use client";
+
 import { Carousel } from "react-responsive-carousel";
 import { Testimonial } from "./Testimonial";
 
 export const Testimonials = () => {
   return (
-    <div className="flex flex-col h-screen justify-center">
+    <div className="flex flex-col h-screen justify-center mx-6 md:mx-24 xl:mx-80">
       <div>
-        <h1 className="text-center text-lg sm:text-3xl mb-12 sm:mb-24">
+        <h1 className="text-center font-semibold text-lg sm:text-4xl mb-12 sm:mb-24">
           A word from my clients...
         </h1>
         <div className="hidden sm:block">
