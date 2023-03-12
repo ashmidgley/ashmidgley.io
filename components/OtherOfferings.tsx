@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoWall } from "./LogoWall";
+import Image from "next/image";
 
 export const OtherOfferings = () => {
   return (
@@ -19,10 +19,16 @@ export const OtherOfferings = () => {
           <span>{"."}</span>
         </p>
       </div>
-      <div>
+      <div className="flex flex-col gap-12">
         <h2 className="text-center text-md sm:text-xl sm:font-semibold">{`Technologies I'm familiar with...`}</h2>
         <div className="w-full flex justify-center">
-          <LogoWall />
+          <Image
+            src="/images/logo-wall.png"
+            alt="Logo Wall"
+            width={1340}
+            height={253}
+            priority
+          />
         </div>
       </div>
     </div>

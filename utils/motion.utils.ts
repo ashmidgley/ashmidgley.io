@@ -5,7 +5,7 @@ export const fadeIn = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
       type: "spring",
       damping: 100,
       stiffness: 500,

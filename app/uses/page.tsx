@@ -31,6 +31,7 @@ export default function Uses() {
           <ul>
             <li>1Password</li>
             <li>Loom</li>
+            <li>Excalidraw</li>
             <li>Vimium Chrome Extension</li>
             <li>META SEO inspector Chrome Extension</li>
           </ul>

@@ -5,7 +5,7 @@ export const SelectedWorkMobile = () => {
   return (
     <div className="h-screen flex flex-col justify-center">
       <h1 className="text-lg text-center mb-12">Selected Work</h1>
-      <Carousel showStatus={false} showThumbs={false}>
+      <Carousel showStatus={false} showIndicators={false}>
         <ProjectSummary
           href="https://geobuff.com"
           title="geobuff.com"

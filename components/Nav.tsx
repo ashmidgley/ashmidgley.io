@@ -24,17 +24,18 @@ export const Nav = () => {
   }, []);
 
   return (
-    <div className="fixed w-full mt-6">
-      <div
-        className="flex justify-center sm:justify-between sm:mx-6 md:mx-24 xl:mx-80"
-        style={{
-          opacity: scrollPosition > 0 ? 0.6 : 1,
-        }}
-      >
+    <div
+      className="fixed w-full py-3 z-50"
+      style={{
+        backgroundColor: "rgba(0,0,0,0.30)",
+        backdropFilter: "blur(9px)",
+      }}
+    >
+      <div className="flex justify-center sm:justify-between sm:mx-6 md:mx-24 ">
         <motion.a href="/">
           <motion.div
             className="inline-block"
-            animate={scrollPosition > 0 ? undefined : { y: [0, 20, 0] }}
+            animate={scrollPosition > 0 ? undefined : { y: [0, 15, 0] }}
             transition={
               scrollPosition > 0
                 ? undefined
@@ -52,8 +53,8 @@ export const Nav = () => {
 
           {scrollPosition === 0 ? (
             <motion.div
-              className="inline-block -ml-7"
-              animate={{ y: [13, 33, 13] }}
+              className="inline-block -ml-4"
+              animate={{ y: [6, 21, 6] }}
               transition={{
                 duration: 0.4,
                 times: [0, 0.4, 1],
@@ -65,7 +66,7 @@ export const Nav = () => {
               <MKey />
             </motion.div>
           ) : (
-            <div className="inline-block translate-y-2 -ml-6">
+            <div className="inline-block translate-y-1 -ml-3">
               <MKeyFlipped />
             </div>
           )}
