@@ -1,6 +1,6 @@
 "use client";
 
-import { RefObject, useEffect, useRef, useState } from "react";
+import { RefObject, useRef, useState } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { motion } from "framer-motion";
 import { GeoBuffSummary } from "./GeoBuffSummary";
@@ -35,23 +35,20 @@ export const SelectedWorkDesktop = () => {
 
   useScrollPosition(
     ({ currPos }) => {
-      if (currPos.y > 0) return;
+      if (currPos.y > 0 || currPos.y < -5000) return;
 
       const progress = Math.ceil((Math.abs(currPos.y) / 5000) * 100);
       if (progress !== scrollProgress) {
         setScrollProgress(progress);
+        setGeoBuffOpacity(getGeoBuffOpacity(progress));
+        setGeoBuffX(getGeoBuffX(progress));
+        setNomadsOpacity(getNomadsOpacity(progress));
+        setNomadsX(getNomadsX(progress));
       }
     },
     [],
     elementRef
   );
-
-  useEffect(() => {
-    setGeoBuffOpacity(getGeoBuffOpacity(scrollProgress));
-    setGeoBuffX(getGeoBuffX(scrollProgress));
-    setNomadsOpacity(getNomadsOpacity(scrollProgress));
-    setNomadsX(getNomadsX(scrollProgress));
-  }, [scrollProgress]);
 
   return (
     <div

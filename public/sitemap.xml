@@ -5,11 +5,16 @@
 		<loc>
 			https://ashmidgley.io
 		</loc>
-		<lastmod>
-			2023-03-10T23:59:14+00:00
-		</lastmod>
 		<priority>
-			1.00
+			1.0
+		</priority>
+	</url>
+	<url>
+		<loc>
+			https://ashmidgley.io/uses
+		</loc>
+		<priority>
+			0.5
 		</priority>
 	</url>
 </urlset>

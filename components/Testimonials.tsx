@@ -29,7 +29,11 @@ export const Testimonials = () => {
           </div>
         </div>
         <div className="block sm:hidden">
-          <Carousel showStatus={false} showIndicators={false}>
+          <Carousel
+            showStatus={false}
+            showIndicators={false}
+            showThumbs={false}
+          >
             <Testimonial
               message="Ash has delivered consistently high-quality work for Nomads while working from Thailand, Indonesia and all over New Zealand. He’s been a great addition to the culture of our team and I’d highly recommend him for any position."
               imageUrl="/images/stacy.jpeg"

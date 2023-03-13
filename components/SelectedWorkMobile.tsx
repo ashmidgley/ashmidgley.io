@@ -7,7 +7,7 @@ import { NomadsSummary } from "./NomadsSummary";
 export const SelectedWorkMobile = () => {
   return (
     <div className="h-screen flex flex-col justify-center mx-6">
-      <Carousel showStatus={false} showIndicators={false}>
+      <Carousel showStatus={false} showIndicators={false} showThumbs={false}>
         <GeoBuffSummary />
         <NomadsSummary />
       </Carousel>

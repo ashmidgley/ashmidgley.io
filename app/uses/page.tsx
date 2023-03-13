@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Uses() {
   return (
-    <div className="h-screen pt-48">
+    <div className="h-screen pt-36 mx-6 md:mx-24 xl:mx-80">
       <h1 className="font-bold text-3xl mb-8">Uses</h1>
       <p className="mt-2 mb-8">{`List of tech I'm currently using.`}</p>
       <div className="flex flex-col gap-12">
