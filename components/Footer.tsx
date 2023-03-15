@@ -8,7 +8,7 @@ export const Footer: FC = () => {
   return (
     <div className="bg-white text-black flex justify-between sm:flex-row p-6 sm:p-12">
       <div className="flex flex-col justify-center">
-        <div className="flex gap-12 sm:gap-24">
+        <div className="flex gap-6 sm:gap-24">
           <div className="flex flex-col">
             <h2 className="font-semibold mb-3">Contact Me</h2>
             <Link href="mailto: ashleymidgley@gmail.com">
