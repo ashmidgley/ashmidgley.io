@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { FC } from "react";
 import clsx from "clsx";
-import { isMobile } from "react-device-detect";
 import { Badge } from "./Badge";
 
 interface ProjectSummaryProps {
@@ -34,13 +33,13 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
   return (
     <div
       className={clsx(
-        "flex flex-col sm:flex-row justify-center gap-12",
+        "h-full flex flex-col sm:flex-row justify-center gap-12",
         className
       )}
     >
       <div className="flex flex-col justify-center sm:w-2/4">
         <Link href={href}>
-          <motion.div whileHover={isMobile ? undefined : { scale: 1.1 }}>
+          <motion.div whileHover={{ border: "3px solid #00fd35", borderRadius: "9px"}}>
             <Image
               src={imageUrl}
               alt={imageAlt}
@@ -57,7 +56,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
             {title}
           </h2>
         </Link>
-        <ul className="flex flex-col gap-1 text-sm sm:text-2xl">
+        <ul className="flex flex-col gap-1 text-sm text-center sm:text-start sm:text-2xl">
           {highlights.map((highlight, index) => (
             <li key={index}>{highlight}</li>
           ))}
