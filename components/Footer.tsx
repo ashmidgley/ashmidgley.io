@@ -3,6 +3,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import { BackArrow } from "./BackArrow";
+import { motion } from "framer-motion"
 
 export const Footer: FC = () => {
   return (
@@ -12,26 +13,26 @@ export const Footer: FC = () => {
           <div className="flex flex-col gap-1">
             <h2 className="font-semibold mb-2">Contact Me</h2>
             <Link href="mailto: ashleymidgley@gmail.com">
-              <span className="underline">Email</span>
+              <span className="underline hover:line-through">Email</span>
             </Link>
             <Link href="https://calendly.com/ashmidgley/chat">
-              <span className="underline">Book a meeting</span>
+              <span className="underline hover:line-through">Book a meeting</span>
             </Link>
           </div>
           <div className="flex flex-col gap-1">
             <h2 className="font-semibold mb-2">Follow</h2>
             <Link href="https://github.com/ashmidgley">
-              <span className="underline">GitHub</span>
+              <span className="underline hover:line-through">GitHub</span>
             </Link>
             <Link href="https://linkedin.com/ashmidgley">
-              <span className="underline">LinkedIn</span>
+              <span className="underline hover:line-through">LinkedIn</span>
             </Link>
           </div>
         </div>
       </div>
-      <button onClick={() => window && window.scrollTo(0, 0)}>
+      <motion.button whileHover={{ y: -10 }} onClick={() => window && window.scrollTo(0, 0)}>
         <BackArrow />
-      </button>
+      </motion.button>
     </div>
   );
 };
