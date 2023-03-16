@@ -39,7 +39,9 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
     >
       <div className="flex flex-col justify-center sm:w-2/4">
         <Link href={href}>
-          <motion.div whileHover={{ border: "3px solid #00fd35", borderRadius: "9px"}}>
+          <motion.div
+            whileHover={{ border: "3px solid #00fd35", borderRadius: "9px" }}
+          >
             <Image
               src={imageUrl}
               alt={imageAlt}
