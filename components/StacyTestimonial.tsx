@@ -5,7 +5,7 @@ interface StacyTestimonialProps {
   className?: string;
 }
 
-export const StacyTestimonial: FC = ({ className }) => {
+export const StacyTestimonial: FC<StacyTestimonialProps> = ({ className }) => {
   return (
     <Testimonial
       className={className}
