@@ -26,7 +26,7 @@ export const Footer: FC = () => {
             <Link href="https://github.com/ashmidgley">
               <span className="underline hover:line-through">GitHub</span>
             </Link>
-            <Link href="https://linkedin.com/ashley-midgley">
+            <Link href="https://www.linkedin.com/in/ashley-midgley">
               <span className="underline hover:line-through">LinkedIn</span>
             </Link>
           </div>
