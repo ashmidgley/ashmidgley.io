@@ -18,8 +18,8 @@ export const Footer: FC = () => (
           <Link href="https://calendly.com/ashmidgley/chat">
             <span className="underline hover:line-through">Book a meeting</span>
           </Link>
+          <GetJokeContainer />
         </div>
-        <GetJokeContainer />
         <div className="flex flex-col gap-1">
           <h2 className="font-semibold mb-2">Follow</h2>
           <Link href="https://github.com/ashmidgley">
