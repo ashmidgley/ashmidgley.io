@@ -6,7 +6,7 @@ import { AnalyticsWrapper } from "../components/AnalyticsWrapper";
 import { Metadata } from "next";
 import clsx from "clsx";
 import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
+import { FooterContainer } from "@/containers/FooterContainer";
 
 const sharpGrotesk = localFont({
   src: [
@@ -86,7 +86,7 @@ export default function RootLayout({
           {children}
           <AnalyticsWrapper />
         </main>
-        <Footer />
+        <FooterContainer />
       </body>
     </html>
   );
