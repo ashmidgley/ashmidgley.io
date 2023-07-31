@@ -1,13 +1,12 @@
+"use client";
+
 import { FC } from "react";
 import Link from "next/link";
 import { BackArrow } from "./BackArrow";
 import { motion } from "framer-motion";
+import { GetJokeContainer } from "@/containers/GetJokeButtonContainer";
 
-interface Props {
-  onGetJoke: () => void;
-}
-
-export const Footer: FC<Props> = ({ onGetJoke }) => (
+export const Footer: FC = () => (
   <div className="bg-white text-black flex justify-between sm:flex-row px-6 py-12 md:px-24">
     <div className="flex flex-col justify-center">
       <div className="flex gap-6 sm:gap-24">
@@ -19,10 +18,8 @@ export const Footer: FC<Props> = ({ onGetJoke }) => (
           <Link href="https://calendly.com/ashmidgley/chat">
             <span className="underline hover:line-through">Book a meeting</span>
           </Link>
-          <button className="text-left underline" onClick={onGetJoke}>
-            Get Joke
-          </button>
         </div>
+        <GetJokeContainer />
         <div className="flex flex-col gap-1">
           <h2 className="font-semibold mb-2">Follow</h2>
           <Link href="https://github.com/ashmidgley">

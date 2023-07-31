@@ -1,12 +1,13 @@
 import "./globals.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import { AnalyticsWrapper } from "../components/AnalyticsWrapper";
 import { Metadata } from "next";
 import clsx from "clsx";
 import { Nav } from "@/components/Nav";
-import { FooterContainer } from "@/containers/FooterContainer";
+import { Footer } from "@/components/Footer";
+import { AppContextProvider } from "@/contexts/AppContext";
 
 const sharpGrotesk = localFont({
   src: [
@@ -81,12 +82,14 @@ export default function RootLayout({
       )}
     >
       <body>
-        <Nav />
-        <main>
-          {children}
-          <AnalyticsWrapper />
-        </main>
-        <FooterContainer />
+        <AppContextProvider>
+          <Nav />
+          <main>
+            {children}
+            <AnalyticsWrapper />
+          </main>
+          <Footer />
+        </AppContextProvider>
       </body>
     </html>
   );
