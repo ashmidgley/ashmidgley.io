@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 import { produce } from "immer";
 
 interface AppStoreState {
@@ -8,21 +9,30 @@ interface AppStoreState {
   setJoke: (joke: string) => void;
 }
 
-export const useAppStore = create<AppStoreState>((set) => ({
-  error: "",
-  setError: (error: string) => {
-    set(
-      produce((draft: AppStoreState) => {
-        draft.error = error;
-      })
-    );
-  },
-  joke: "",
-  setJoke: (joke: string) => {
-    set(
-      produce((draft: AppStoreState) => {
-        draft.joke = joke;
-      })
-    );
-  },
-}));
+export const useAppStore = create<AppStoreState>()(
+  devtools(
+    (set) => ({
+      error: "",
+      setError: (error: string) => {
+        set(
+          produce((draft: AppStoreState) => {
+            draft.error = error;
+          }),
+          false,
+          "setError"
+        );
+      },
+      joke: "",
+      setJoke: (joke: string) => {
+        set(
+          produce((draft: AppStoreState) => {
+            draft.joke = joke;
+          }),
+          false,
+          "setJoke"
+        );
+      },
+    }),
+    { enabled: process.env.NODE_ENV === "development" }
+  )
+);
