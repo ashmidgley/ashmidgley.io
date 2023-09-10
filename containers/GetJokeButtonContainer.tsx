@@ -1,32 +1,35 @@
 "use client";
 
+import { useJoke } from "@/hooks/useJoke";
 import { useAppStore } from "@/store/app";
-import { fetcher } from "@/utils/fetcher";
-import React from "react";
-import useSWR from "swr";
+import React, { useEffect } from "react";
 import { GetJokeButton } from "../components/GetJokeButton";
 
 export const GetJokeContainer = () => {
-  const { data: joke, error, isLoading, mutate } = useSWR("api/joke", fetcher);
-  const { setJoke, setError } = useAppStore();
+  const { data: joke, isLoading, error: isError, mutate } = useJoke();
+  const { setJoke, error, setError } = useAppStore();
 
-  const handleGetJoke = () => {
-    setJoke(`${joke.setup} ... ${joke.punchline}`);
-    setTimeout(() => {
-      setJoke("");
-    }, 10000);
-    mutate();
-  };
+  useEffect(() => {
+    if (joke) {
+      setJoke(`${joke.setup} ... ${joke.punchline}`);
+      setTimeout(() => {
+        setJoke("");
+      }, 10000);
+    }
+  }, [joke]);
 
-  if (error) {
-    setError("Failed to load joke...");
-    setTimeout(() => {
-      setError("");
-    }, 5000);
-    return <div>Failed to load...</div>;
-  }
+  useEffect(() => {
+    if (!error && isError) {
+      setError("Failed to load joke...");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+  }, [isError]);
+
+  if (error) return <div>{error}</div>;
 
   if (isLoading) return <div>Is loading...</div>;
 
-  return <GetJokeButton onGetJoke={handleGetJoke} />;
+  return <GetJokeButton onGetJoke={() => mutate()} />;
 };
