@@ -7,7 +7,6 @@ import { Metadata } from "next";
 import clsx from "clsx";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { AppContextProvider } from "@/contexts/AppContext";
 
 const sharpGrotesk = localFont({
   src: [
@@ -82,14 +81,12 @@ export default function RootLayout({
       )}
     >
       <body>
-        <AppContextProvider>
-          <Nav />
-          <main>
-            {children}
-            <AnalyticsWrapper />
-          </main>
-          <Footer />
-        </AppContextProvider>
+        <Nav />
+        <main>
+          {children}
+          <AnalyticsWrapper />
+        </main>
+        <Footer />
       </body>
     </html>
   );

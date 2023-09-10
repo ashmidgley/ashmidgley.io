@@ -2,14 +2,13 @@
 
 import { Banner } from "@/components/Banner";
 import { SelectedWork } from "@/components/SelectedWork";
-import { AppContext } from "@/contexts/AppContext";
-import { useContext } from "react";
+import { useAppStore } from "@/store/app";
 import { Offerings } from "../components/Offerings";
 import { OtherOfferings } from "../components/OtherOfferings";
 import { Testimonials } from "../components/Testimonials";
 
 export default function Home() {
-  const { error, joke } = useContext(AppContext);
+  const { error, joke } = useAppStore();
 
   return (
     <>
