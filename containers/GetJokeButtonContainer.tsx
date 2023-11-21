@@ -14,7 +14,7 @@ export const GetJokeContainer = () => {
       setJoke(`${joke.setup} ... ${joke.punchline}`);
       setTimeout(() => {
         setJoke("");
-      }, 10000);
+      }, 5000);
     }
   }, [joke]);
 
@@ -31,5 +31,5 @@ export const GetJokeContainer = () => {
 
   if (isLoading) return <div>Is loading...</div>;
 
-  return <GetJokeButton onGetJoke={() => mutate()} />;
+  return <GetJokeButton onGetJoke={mutate} />;
 };
