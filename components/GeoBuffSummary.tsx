@@ -2,7 +2,7 @@ import { ProjectSummary } from "./ProjectSummary";
 
 export const GeoBuffSummary = () => (
   <ProjectSummary
-    href="https://geobuff.com"
+    href="https://github.com/geobuff"
     title="geobuff.com"
     imageUrl="/images/geobuff.png"
     imageAlt="GeoBuff"
@@ -10,7 +10,7 @@ export const GeoBuffSummary = () => (
     imageHeight={1349}
     highlights={[
       <p key={0}>
-        <span className="font-semibold">25,000+</span> quiz plays
+        <span className="font-semibold">30,000+</span> quiz plays
       </p>,
       <p key={1}>
         <span className="font-semibold">220+</span> users

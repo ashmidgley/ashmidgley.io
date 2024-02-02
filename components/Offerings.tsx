@@ -11,7 +11,7 @@ export const Offerings = () => {
         <p className="text-slate-300 text-lg sm:text-4xl">
           <span>{"I build sites "}</span>
           <motion.a
-            href="https://geobuff.com"
+            href="https://rationalnomads.com"
             className="inline-block"
             whileHover={{ scale: 1.5 }}
           >
