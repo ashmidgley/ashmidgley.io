@@ -10,14 +10,14 @@ export default function Uses() {
   return (
     <div className="py-24 sm:py-32 mx-6 md:mx-24 xl:mx-80">
       <h1 className="font-bold text-3xl mb-8">Uses</h1>
-      <p className="mt-2 mb-8">{`List of tech I'm currently using.`}</p>
+      <p className="mt-2 mb-8">{`List of tech I'm currently using:`}</p>
       <div className="flex flex-col gap-12">
         <div>
           <h3 className="font-semibold">Computer</h3>
           <ul>
             <li>13&quot; Macbook Pro, M1 (2020)</li>
             <li>Kinesis Advantage2 Keyboard</li>
-            <li>Vassink Ergonomic Mouse</li>
+            <li>Vassink Mouse</li>
           </ul>
         </div>
         <div>
@@ -42,7 +42,6 @@ export default function Uses() {
             <li>Vimium</li>
             <li>1Password</li>
             <li>Loom</li>
-            <li>Excalidraw</li>
           </ul>
         </div>
       </div>

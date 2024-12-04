@@ -11,7 +11,7 @@ export const OtherOfferings = () => {
             {"Need an extra pair of hands on an existing project? "}
           </span>
           <Link
-            href="https://calendly.com/ashmidgley/chat"
+            href="mailto: ashleymidgley@gmail.com"
             className="text-[#00fd35] underline hover:line-through"
           >
             {"Let's talk"}

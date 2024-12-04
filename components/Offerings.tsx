@@ -9,9 +9,9 @@ export const Offerings = () => {
     <div className="flex flex-col h-screen justify-center mx-6 md:mx-24 xl:mx-80">
       <div className="flex flex-row justify-center">
         <p className="text-slate-300 text-lg sm:text-4xl">
-          <span>{"I build sites "}</span>
+          <span>{"I build web applications "}</span>
           <motion.a
-            href="https://rationalnomads.com"
+            href="https://kanexa.net"
             className="inline-block"
             whileHover={{ scale: 1.5 }}
           >
@@ -26,21 +26,21 @@ export const Offerings = () => {
           </Link>
           <span>{", "}</span>
           <Link
-            href="https://nextjs.org"
+            href="https://react.dev"
             className="text-white font-semibold hover:line-through"
           >
-            {"Next.js"}
+            {"React"}
           </Link>
           <span>{" and "}</span>
           <Link
-            href="https://vercel.com"
+            href="https://nodejs.org"
             className="text-white font-semibold hover:line-through"
           >
-            {"Vercel"}
+            {"Node.js"}
           </Link>
           <span>{". Have an idea but "}</span>
           <Link
-            href="https://calendly.com/ashmidgley/chat"
+            href="mailto: ashleymidgley@gmail.com"
             className="text-[#00fd35] underline hover:line-through"
           >
             {"don't know where to start?"}

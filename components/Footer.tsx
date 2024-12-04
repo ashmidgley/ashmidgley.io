@@ -4,7 +4,6 @@ import { FC } from "react";
 import Link from "next/link";
 import { BackArrow } from "./BackArrow";
 import { motion } from "framer-motion";
-import { GetJokeContainer } from "@/containers/GetJokeButtonContainer";
 
 export const Footer: FC = () => (
   <div className="bg-white text-black flex justify-between sm:flex-row px-6 py-12 md:px-24">
@@ -15,10 +14,6 @@ export const Footer: FC = () => (
           <Link href="mailto: ashleymidgley@gmail.com">
             <span className="underline hover:line-through">Email</span>
           </Link>
-          <Link href="https://calendly.com/ashmidgley/chat">
-            <span className="underline hover:line-through">Book a meeting</span>
-          </Link>
-          <GetJokeContainer />
         </div>
         <div className="flex flex-col gap-1">
           <h2 className="font-semibold mb-2">Follow</h2>

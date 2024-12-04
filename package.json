@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "test:types": "tsc --noEmit"
   },
   "dependencies": {
     "@types/react": "18.0.28",
@@ -17,14 +18,11 @@
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.0",
     "framer-motion": "^9.1.6",
-    "immer": "^10.0.2",
-    "next": "^13.4.12",
+    "next": "^15.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23",
-    "swr": "^2.2.0",
-    "typescript": "4.9.5",
-    "zustand": "^4.4.1"
+    "typescript": "4.9.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.16.4",
