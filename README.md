@@ -4,7 +4,7 @@ Personal portfolio site for Ash Midgley, built with Next.js (App Router), TypeSc
 
 ## Overview
 
-This project powers [ashmidgley.io](https://ashmidgley.io), a freelance software engineering portfolio.  
+This project powers [ashmidgley.io](https://ashmidgley.io), a software engineering portfolio.  
 It highlights:
 
 - Previous work experience

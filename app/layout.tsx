@@ -25,13 +25,13 @@ const sharpGrotesk = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ash Midgley | Freelance Software Engineer",
+    default: "Ash Midgley | Software Engineer",
     template: "%s | Ash Midgley",
   },
   description:
     "Need an extra pair of hands on an existing project? Let's talk...",
   openGraph: {
-    title: "Ash Midgley | Freelance Software Engineer",
+    title: "Ash Midgley | Software Engineer",
     description:
       "Need an extra pair of hands on an existing project? Let's talk...",
     url: "https://ashmidgley.io",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Ash Midgley | Freelance Software Engineer",
+    title: "Ash Midgley | Software Engineer",
     card: "summary_large_image",
   },
   icons: {
