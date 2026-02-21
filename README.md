@@ -7,9 +7,8 @@ Personal portfolio site for Ash Midgley, built with Next.js (App Router), TypeSc
 This project powers [ashmidgley.io](https://ashmidgley.io), a freelance software engineering portfolio.  
 It highlights:
 
-- Service offerings
+- Previous work experience
 - Selected client work
-- Client testimonials
 
 ## Tech Stack
 
@@ -18,13 +17,13 @@ It highlights:
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- Custom internal carousel component
+- Custom portfolio tiles (experience + selected work)
 - Vercel Analytics
 - Jest + Testing Library (configured)
 
 ## Routes
 
-- `/` - Main landing page (offerings, work, testimonials)
+- `/` - Main landing page (experience and selected work)
 
 ## Project Structure
 
@@ -33,15 +32,16 @@ app/
   layout.tsx         # global layout + metadata + nav/footer
   page.tsx           # homepage composition
 components/
-  ...                # UI sections, project summaries, testimonials, branding
+  PreviousExperience.tsx
+  SelectedWork.tsx
+  ProjectSummary.tsx
+  __tests__/         # component tests
 public/
-  images/            # portfolio screenshots + profile images
+  images/            # portfolio screenshots
   fonts/             # Sharp Grotesk local fonts
   og.jpg             # Open Graph image
   robot.txt          # crawler hints
   sitemap.xml        # static sitemap
-utils/
-  motion.utils.ts    # motion presets
 ```
 
 ## Getting Started
@@ -77,7 +77,16 @@ Open `http://localhost:3000`.
 
 ## Testing Notes
 
-Jest and Testing Library are configured, but there are currently no test files in the repository.
+Current coverage focuses on homepage content sections:
+
+- `components/__tests__/PreviousExperience.test.tsx`
+- `components/__tests__/SelectedWork.test.tsx`
+
+Run all tests with:
+
+```bash
+pnpm test:ci
+```
 
 ## Deployment
 
@@ -88,9 +97,7 @@ The project is configured for typical Next.js deployment (e.g. Vercel).
 
 Most homepage content is component-driven and can be updated in:
 
-- `components/Offerings.tsx`
+- `components/PreviousExperience.tsx`
 - `components/SelectedWork.tsx`
-- `components/OtherOfferings.tsx`
-- `components/Testimonials.tsx`
 
 SEO metadata is managed in `app/layout.tsx`.

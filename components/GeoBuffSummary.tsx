@@ -1,40 +1,27 @@
-import Link from "next/link";
 import { ProjectSummary } from "./ProjectSummary";
 
-export const GeoBuffSummary = () => (
+interface GeoBuffSummaryProps {
+  className?: string;
+}
+
+export const GeoBuffSummary = ({ className }: GeoBuffSummaryProps) => (
   <ProjectSummary
+    className={className}
     href="https://geobuff.io"
     title="geobuff.io"
+    subtitle="Geography Quiz Platform"
     imageUrl="/images/geobuff.png"
     imageAlt="GeoBuff"
     imageWidth={2366}
     imageHeight={1349}
-    highlights={[
-      <p key={0}>
-        <span className="font-semibold">30,000+</span> quiz plays
-      </p>,
-      <p key={1}>
-        <span className="font-semibold">250+</span> users
-      </p>,
-      <p key={2}>
-        <span className="font-semibold">250+</span> iOS downloads
-      </p>,
-      <p key={4}>
-        Invited to join the{" "}
-        <Link href="https://www.phaseone.ventures">
-          {" "}
-          <span className="underline hover:line-through">Phase One</span>
-        </Link>{" "}
-        startup incubator introductory program.
-      </p>
-    ]}
+    summary="Built a multilingual geography quiz product spanning web and mobile, with a strong focus on gameplay quality and scalable content delivery."
+    impact="Reached 30,000+ quiz plays, 250+ users, 250+ iOS downloads, and received a Phase One incubator invitation."
     technologies={[
       "Next.js",
-      "TypeScript",
       "Go",
       "PostgreSQL",
-      "AWS",
-      "Vercel",
+      "Terraform",
+      "AWS ECS/RDS/EventBridge",
     ]}
   />
 );
