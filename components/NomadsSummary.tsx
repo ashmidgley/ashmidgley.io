@@ -2,7 +2,7 @@ import { ProjectSummary } from "./ProjectSummary";
 
 export const NomadsSummary = () => (
   <ProjectSummary
-    href="https://rationalnomads.com"
+    href="https://nz.linkedin.com/company/rationalnomads"
     title="rationalnomads.com"
     imageUrl="/images/nomads.png"
     imageAlt="Rational Nomads"

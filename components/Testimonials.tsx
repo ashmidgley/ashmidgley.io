@@ -1,6 +1,6 @@
 "use client";
 
-import { Carousel } from "react-responsive-carousel";
+import { Carousel } from "./Carousel";
 import { JacobTestimonial } from "./JacobTestimonial";
 import { StacyTestimonial } from "./StacyTestimonial";
 
@@ -18,11 +18,7 @@ export const Testimonials = () => {
           </div>
         </div>
         <div className="block sm:hidden">
-          <Carousel
-            showStatus={false}
-            showIndicators={false}
-            showThumbs={false}
-          >
+          <Carousel>
             <JacobTestimonial />
             <StacyTestimonial />
           </Carousel>

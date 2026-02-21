@@ -3,8 +3,8 @@ import { ProjectSummary } from "./ProjectSummary";
 
 export const GeoBuffSummary = () => (
   <ProjectSummary
-    href="https://web.archive.org/web/20220625135246/https://www.geobuff.com/"
-    title="geobuff.com"
+    href="https://geobuff.io"
+    title="geobuff.io"
     imageUrl="/images/geobuff.png"
     imageAlt="GeoBuff"
     imageWidth={2366}
@@ -19,9 +19,6 @@ export const GeoBuffSummary = () => (
       <p key={2}>
         <span className="font-semibold">250+</span> iOS downloads
       </p>,
-      <p key={3}>
-        <span className="font-semibold">10</span> languages
-      </p>,
       <p key={4}>
         Invited to join the{" "}
         <Link href="https://www.phaseone.ventures">
@@ -29,20 +26,15 @@ export const GeoBuffSummary = () => (
           <span className="underline hover:line-through">Phase One</span>
         </Link>{" "}
         startup incubator introductory program.
-      </p>,
-      <p key={5}>
-        {`Shutdown in 2023 as unable to generate enough revenue to cover mounting hosting costs.`}
-      </p>,
+      </p>
     ]}
     technologies={[
       "Next.js",
       "TypeScript",
-      "Chakra UI",
-      "Vercel",
       "Go",
-      "Google Cloud",
       "PostgreSQL",
-      "React Native",
+      "AWS",
+      "Vercel",
     ]}
   />
 );
