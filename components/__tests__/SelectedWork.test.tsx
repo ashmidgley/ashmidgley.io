@@ -24,7 +24,7 @@ describe("SelectedWork", () => {
       "https://nz.linkedin.com/company/rationalnomads"
     );
 
-    expect(screen.getByText("AWS")).toBeInTheDocument();
+    expect(screen.getByText("AWS ECS/RDS/EventBridge")).toBeInTheDocument();
     expect(screen.getByText("Chakra UI")).toBeInTheDocument();
 
     expect(screen.getByAltText("GeoBuff")).toBeInTheDocument();

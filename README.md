@@ -9,6 +9,7 @@ It highlights:
 
 - Previous work experience
 - Selected client work
+- Contact call-to-action with email link
 
 ## Tech Stack
 
@@ -34,6 +35,7 @@ app/
 components/
   PreviousExperience.tsx
   SelectedWork.tsx
+  WorkWithMe.tsx
   ProjectSummary.tsx
   __tests__/         # component tests
 public/
@@ -81,6 +83,7 @@ Current coverage focuses on homepage content sections:
 
 - `components/__tests__/PreviousExperience.test.tsx`
 - `components/__tests__/SelectedWork.test.tsx`
+- `components/__tests__/WorkWithMe.test.tsx`
 
 Run all tests with:
 
@@ -99,5 +102,6 @@ Most homepage content is component-driven and can be updated in:
 
 - `components/PreviousExperience.tsx`
 - `components/SelectedWork.tsx`
+- `components/WorkWithMe.tsx`
 
 SEO metadata is managed in `app/layout.tsx`.
