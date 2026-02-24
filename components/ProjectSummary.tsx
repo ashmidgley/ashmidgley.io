@@ -9,6 +9,7 @@ import { Badge } from "./Badge";
 
 interface ProjectSummaryProps {
   className?: string;
+  imageClassName?: string;
   title: string;
   subtitle: string;
   href: string;
@@ -23,6 +24,7 @@ interface ProjectSummaryProps {
 
 export const ProjectSummary: FC<ProjectSummaryProps> = ({
   className,
+  imageClassName,
   title,
   subtitle,
   href,
@@ -84,6 +86,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
               width={imageWidth}
               height={imageHeight}
               priority
+              className={imageClassName}
             />
           </Link>
         </div>

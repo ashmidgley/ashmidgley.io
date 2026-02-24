@@ -1,5 +1,6 @@
 import { GeoBuffSummary } from "./GeoBuffSummary";
 import { NomadsSummary } from "./NomadsSummary";
+import { BookshelfSummary } from "./BookshelfSummary";
 
 export const SelectedWork = () => {
   return (
@@ -17,6 +18,7 @@ export const SelectedWork = () => {
       <div className="flex flex-col gap-6 sm:gap-8">
         <GeoBuffSummary />
         <NomadsSummary />
+        <BookshelfSummary />
       </div>
     </section>
   );
