@@ -7,7 +7,8 @@ interface NomadsSummaryProps {
 export const NomadsSummary = ({ className }: NomadsSummaryProps) => (
   <ProjectSummary
     className={className}
-    href="https://nomads-site-chi.vercel.app"
+    href="/work/rational-nomads"
+    liveHref="https://nomads-site-chi.vercel.app"
     title="rationalnomads.com"
     subtitle="Rational Nomads"
     imageUrl="/images/nomads.png"

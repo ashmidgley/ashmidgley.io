@@ -13,6 +13,7 @@ interface ProjectSummaryProps {
   title: string;
   subtitle: string;
   href: string;
+  liveHref: string;
   imageUrl: string;
   imageAlt: string;
   imageWidth: number;
@@ -28,6 +29,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
   title,
   subtitle,
   href,
+  liveHref,
   imageUrl,
   imageAlt,
   imageWidth,
@@ -56,7 +58,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
               </p>
             </div>
             <Link
-              href={href}
+              href={liveHref}
               className="shrink-0 text-right text-xs text-slate-400 underline hover:line-through sm:text-sm"
             >
               Visit

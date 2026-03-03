@@ -7,7 +7,8 @@ interface GeoBuffSummaryProps {
 export const GeoBuffSummary = ({ className }: GeoBuffSummaryProps) => (
   <ProjectSummary
     className={className}
-    href="https://geobuff.io"
+    href="/work/geobuff"
+    liveHref="https://geobuff.io"
     title="geobuff.io"
     subtitle="Geography Quiz Platform"
     imageUrl="/images/geobuff.png"
