@@ -24,26 +24,39 @@ const sharpGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ashmidgley.io"),
   title: {
-    default: "Ash Midgley | Software Engineer",
+    default: "Ash Midgley | Full-Stack Software Engineer",
     template: "%s | Ash Midgley",
   },
   description:
-    "Need an extra pair of hands on an existing project? Let's talk...",
+    "Full-stack software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
+  alternates: {
+    canonical: "/",
+  },
+  keywords: [
+    "Ash Midgley",
+    "freelance software engineer",
+    "full-stack software engineer",
+    "Next.js developer",
+    "React developer",
+    "TypeScript developer",
+  ],
   openGraph: {
-    title: "Ash Midgley | Software Engineer",
+    title: "Ash Midgley | Full-Stack Software Engineer",
     description:
-      "Need an extra pair of hands on an existing project? Let's talk...",
-    url: "https://ashmidgley.io",
+      "Full-stack software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
+    url: "/",
     siteName: "Ash Midgley",
     images: [
       {
-        url: "https://ashmidgley.io/og.jpg",
+        url: "/og.jpg",
         width: 1920,
         height: 1080,
+        alt: "Ash Midgley portfolio site preview",
       },
     ],
-    locale: "en-NZ",
+    locale: "en_GB",
     type: "website",
   },
   robots: {
@@ -58,8 +71,11 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Ash Midgley | Software Engineer",
+    title: "Ash Midgley | Full-Stack Software Engineer",
+    description:
+      "Full-stack software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
     card: "summary_large_image",
+    images: ["/og.jpg"],
   },
   icons: {
     shortcut: "/favicon.ico",
