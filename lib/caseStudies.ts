@@ -104,7 +104,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "bookshelf",
     route: "/work/bookshelf",
-    siteUrl: "https://boookshelf.xyz",
+    siteUrl: "https://boookshelf.xyz/shelf/1",
     siteLabel: "boookshelf.xyz",
     title: "boookshelf.xyz",
     subtitle: "Bookshelf",

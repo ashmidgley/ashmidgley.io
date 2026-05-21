@@ -22,7 +22,7 @@ describe("SelectedWork", () => {
     expect(visitLinks).toHaveLength(3);
     expect(visitLinks[0]).toHaveAttribute("href", "https://geobuff.io");
     expect(visitLinks[1]).toHaveAttribute("href", "https://nomads-site-chi.vercel.app");
-    expect(visitLinks[2]).toHaveAttribute("href", "https://boookshelf.xyz");
+    expect(visitLinks[2]).toHaveAttribute("href", "https://boookshelf.xyz/shelf/1");
 
     expect(screen.getByText("AWS ECS/RDS/EventBridge")).toBeInTheDocument();
     expect(screen.getByText("Chakra UI")).toBeInTheDocument();

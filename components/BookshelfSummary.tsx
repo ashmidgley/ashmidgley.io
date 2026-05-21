@@ -9,7 +9,7 @@ export const BookshelfSummary = ({ className }: BookshelfSummaryProps) => (
     className={className}
     imageClassName="rounded-tl-md rounded-tr-md"
     href="/work/bookshelf"
-    liveHref="https://boookshelf.xyz"
+    liveHref="https://boookshelf.xyz/shelf/1"
     title="boookshelf.xyz"
     subtitle="Bookshelf"
     imageUrl="/images/bookshelf.png"
