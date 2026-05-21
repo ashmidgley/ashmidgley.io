@@ -31,7 +31,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <header className="mx-6 pt-32 pb-16 md:mx-24 md:pt-40 md:pb-20 xl:mx-24 2xl:mx-80">
+      <header className="mx-6 pt-32 pb-16 md:mx-24 md:pt-40 md:pb-20 lg:flex lg:min-h-screen lg:flex-col lg:justify-center xl:mx-24 2xl:mx-80">
         <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[#00fd35] sm:text-sm">
           Product Engineering
         </p>
