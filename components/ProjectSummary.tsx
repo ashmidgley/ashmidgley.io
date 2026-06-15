@@ -12,7 +12,6 @@ interface ProjectSummaryProps {
   imageClassName?: string;
   title: string;
   subtitle: string;
-  href: string;
   liveHref: string;
   imageUrl: string;
   imageAlt: string;
@@ -28,7 +27,6 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
   imageClassName,
   title,
   subtitle,
-  href,
   liveHref,
   imageUrl,
   imageAlt,
@@ -48,7 +46,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
         <div className="sm:w-2/4">
           <div className="mb-4 flex items-start justify-between gap-4">
             <div>
-              <Link href={href} className="hover:line-through">
+              <Link href={liveHref} className="hover:line-through">
                 <h3 className="text-lg font-semibold leading-tight sm:text-xl">
                   {title}
                 </h3>
@@ -81,7 +79,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
         </div>
 
         <div className="sm:w-2/4">
-          <Link href={href} className="block">
+          <Link href={liveHref} className="block">
             <Image
               src={imageUrl}
               alt={imageAlt}

@@ -8,7 +8,6 @@ export const BookshelfSummary = ({ className }: BookshelfSummaryProps) => (
   <ProjectSummary
     className={className}
     imageClassName="rounded-tl-md rounded-tr-md"
-    href="/work/bookshelf"
     liveHref="https://boookshelf.xyz/shelf/1"
     title="boookshelf.xyz"
     subtitle="Bookshelf"
