@@ -352,7 +352,8 @@ const draw = (
       out.dy = 0;
       out.s = 1;
       variant?.sample(f, x, y, row * f.cols + col, out);
-      const level = Math.min(LEVELS, Math.round(out.t * LEVELS));
+      // `out.t > 0` also rejects NaN, which would index past the sprites.
+      const level = out.t > 0 ? Math.min(LEVELS, Math.round(out.t * LEVELS)) : 0;
       const r = DOT_RADIUS * out.s;
       ctx.drawImage(sprites[level], x + out.dx - r, y + out.dy - r, r * 2, r * 2);
     }
@@ -383,7 +384,9 @@ export const DotGrid = ({ variant }: DotGridProps) => {
     const render = () => draw(ctx, field, effect, sprites, dpr);
 
     const loop = (now: number) => {
-      const dt = Math.min((now - last) / 1000, 1 / 30);
+      // rAF's timestamp is the frame start, which can precede the
+      // performance.now() taken in kick(), so the first delta can be negative.
+      const dt = Math.min(Math.max((now - last) / 1000, 0), 1 / 30);
       last = now;
       field.time += dt;
       const busy = effect?.update(field, dt) ?? false;

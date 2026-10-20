@@ -1,12 +1,11 @@
-import { GeoBuffSummary } from "./GeoBuffSummary";
-import { NomadsSummary } from "./NomadsSummary";
-import { BookshelfSummary } from "./BookshelfSummary";
+import { projects } from "@/lib/content";
+import { ProjectSummary } from "./ProjectSummary";
 
 export const SelectedWork = () => {
   return (
     <section
       id="selected-work"
-      className="mx-6 py-24 md:mx-24 md:py-32 xl:mx-24 2xl:mx-80"
+      className="mx-6 py-24 md:mx-24 md:py-32 2xl:mx-80"
     >
       <div className="mb-10 sm:mb-12">
         <p className="mb-2 text-xs uppercase tracking-[0.2em] text-[#00fd35] sm:text-sm">
@@ -19,9 +18,22 @@ export const SelectedWork = () => {
         </p>
       </div>
       <div className="flex flex-col gap-6 sm:gap-8">
-        <GeoBuffSummary />
-        <NomadsSummary />
-        <BookshelfSummary />
+        {projects.map((project) => (
+          <ProjectSummary
+            key={project.href}
+            liveHref={project.href}
+            title={project.title}
+            subtitle={project.subtitle}
+            imageUrl={project.image.src}
+            imageAlt={project.image.alt}
+            imageWidth={project.image.width}
+            imageHeight={project.image.height}
+            imageClassName={project.image.className}
+            summary={project.summary}
+            impact={project.impact}
+            technologies={project.technologies}
+          />
+        ))}
       </div>
     </section>
   );

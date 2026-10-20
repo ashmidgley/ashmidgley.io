@@ -6,12 +6,12 @@ import { BackArrow } from "./BackArrow";
 import { motion } from "framer-motion";
 
 export const Footer: FC = () => (
-  <div className="bg-white text-black flex justify-between sm:flex-row px-6 py-12 md:px-24">
+  <footer className="bg-white text-black flex justify-between sm:flex-row px-6 py-12 md:px-24">
     <div className="flex flex-col justify-center">
       <div className="flex gap-6 sm:gap-24">
         <div className="flex flex-col gap-1">
           <h2 className="font-semibold mb-2">Contact Me</h2>
-          <Link href="mailto: ashleymidgley@gmail.com">
+          <Link href="mailto:ashleymidgley@gmail.com">
             <span className="underline hover:line-through">Email</span>
           </Link>
         </div>
@@ -27,10 +27,11 @@ export const Footer: FC = () => (
       </div>
     </div>
     <motion.button
+      aria-label="Back to top"
       whileHover={{ y: -10 }}
-      onClick={() => window && window.scrollTo(0, 0)}
+      onClick={() => window.scrollTo(0, 0)}
     >
       <BackArrow />
     </motion.button>
-  </div>
+  </footer>
 );

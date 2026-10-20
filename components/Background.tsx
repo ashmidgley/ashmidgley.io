@@ -5,33 +5,41 @@ import clsx from "clsx";
 import { DOT_GRID_VARIANTS, DotGrid, DotGridVariant } from "./DotGrid";
 
 // The active variant lives in `?bg=` (shareable) and localStorage (sticky).
-// The switcher shows in development, or anywhere `?bg=` is in the URL.
+// The switcher stays hidden until the terminal's `theme` easter egg reveals it.
 const PARAM = "bg";
 const STORAGE_KEY = "dot-grid-variant";
+const SWITCHER_KEY = "dot-grid-switcher";
 const CHANGE_EVENT = "dot-grid-variant-change";
-const DEFAULT_VARIANT: DotGridVariant = "halo";
+export const DEFAULT_VARIANT: DotGridVariant = "comet";
 
-const isVariant = (value: string | null): value is DotGridVariant =>
+export const isVariant = (value: string | null): value is DotGridVariant =>
   DOT_GRID_VARIANTS.some((variant) => variant.id === value);
 
-const readStored = () => {
+const readStored = (key: string) => {
   try {
-    return localStorage.getItem(STORAGE_KEY);
+    return localStorage.getItem(key);
   } catch {
     return null;
+  }
+};
+
+const writeStored = (key: string, value: string | null) => {
+  try {
+    if (value === null) localStorage.removeItem(key);
+    else localStorage.setItem(key, value);
+  } catch {
+    // Storage can be unavailable (private mode); the setting just won't stick.
   }
 };
 
 const readVariant = (): DotGridVariant => {
   const fromUrl = new URLSearchParams(window.location.search).get(PARAM);
   if (isVariant(fromUrl)) return fromUrl;
-  const stored = readStored();
+  const stored = readStored(STORAGE_KEY);
   return isVariant(stored) ? stored : DEFAULT_VARIANT;
 };
 
-const readShowSwitcher = () =>
-  process.env.NODE_ENV !== "production" ||
-  new URLSearchParams(window.location.search).has(PARAM);
+export const isSwitcherVisible = () => readStored(SWITCHER_KEY) === "1";
 
 const subscribe = (onChange: () => void) => {
   window.addEventListener(CHANGE_EVENT, onChange);
@@ -42,21 +50,27 @@ const subscribe = (onChange: () => void) => {
   };
 };
 
-const selectVariant = (variant: DotGridVariant) => {
-  try {
-    localStorage.setItem(STORAGE_KEY, variant);
-  } catch {
-    // Storage can be unavailable (private mode); the URL still carries it.
-  }
+const notify = () => window.dispatchEvent(new Event(CHANGE_EVENT));
+
+export const selectVariant = (variant: DotGridVariant) => {
+  writeStored(STORAGE_KEY, variant);
   const url = new URL(window.location.href);
   url.searchParams.set(PARAM, variant);
   window.history.replaceState(null, "", url);
-  window.dispatchEvent(new Event(CHANGE_EVENT));
+  notify();
 };
 
+export const setSwitcherVisible = (visible: boolean) => {
+  writeStored(SWITCHER_KEY, visible ? "1" : null);
+  notify();
+};
+
+export const useDotGridVariant = () =>
+  useSyncExternalStore(subscribe, readVariant, () => DEFAULT_VARIANT);
+
 export const Background = () => {
-  const variant = useSyncExternalStore(subscribe, readVariant, () => DEFAULT_VARIANT);
-  const showSwitcher = useSyncExternalStore(subscribe, readShowSwitcher, () => false);
+  const variant = useDotGridVariant();
+  const showSwitcher = useSyncExternalStore(subscribe, isSwitcherVisible, () => false);
 
   return (
     <>

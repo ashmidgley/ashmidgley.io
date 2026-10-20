@@ -57,6 +57,7 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
             </div>
             <Link
               href={liveHref}
+              aria-label={`Visit ${title}`}
               className="shrink-0 text-right text-xs text-slate-400 underline hover:line-through sm:text-sm"
             >
               Visit
@@ -79,12 +80,15 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
         </div>
 
         <div className="sm:w-2/4">
-          <Link href={liveHref} className="block">
+          {/* Duplicate of the title link for mouse users; kept out of the tab order. */}
+          <Link href={liveHref} className="block" tabIndex={-1} aria-hidden="true">
             <Image
               src={imageUrl}
               alt={imageAlt}
               width={imageWidth}
               height={imageHeight}
+              // Half the card, after section margins, card padding and gap at each breakpoint.
+              sizes="(min-width: 1536px) calc(50vw - 360px), (min-width: 768px) calc(50vw - 136px), (min-width: 640px) calc(50vw - 64px), calc(100vw - 88px)"
               className={imageClassName}
             />
           </Link>
