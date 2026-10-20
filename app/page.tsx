@@ -8,9 +8,9 @@ const personSchema = {
   "@type": "Person",
   name: profile.name,
   url: "https://ashmidgley.io",
-  jobTitle: "Full-Stack Software Engineer",
+  jobTitle: "Software Engineer",
   description:
-    "Full-stack software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems.",
+    "Software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems.",
   sameAs: [profile.github, profile.linkedin],
   knowsAbout: [
     "Next.js",

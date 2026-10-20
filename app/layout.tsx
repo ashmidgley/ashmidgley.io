@@ -25,26 +25,26 @@ const sharpGrotesk = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://ashmidgley.io"),
   title: {
-    default: "Ash Midgley | Full-Stack Software Engineer",
+    default: "Ash Midgley | Software Engineer",
     template: "%s | Ash Midgley",
   },
   description:
-    "Full-stack software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
+    "Software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
   alternates: {
     canonical: "/",
   },
   keywords: [
     "Ash Midgley",
     "freelance software engineer",
-    "full-stack software engineer",
+    "software engineer",
     "Next.js developer",
     "React developer",
     "TypeScript developer",
   ],
   openGraph: {
-    title: "Ash Midgley | Full-Stack Software Engineer",
+    title: "Ash Midgley | Software Engineer",
     description:
-      "Full-stack software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
+      "Software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
     url: "/",
     siteName: "Ash Midgley",
     images: [
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Ash Midgley | Full-Stack Software Engineer",
+    title: "Ash Midgley | Software Engineer",
     description:
-      "Full-stack software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
+      "Software engineer building pragmatic web products with Next.js, React, TypeScript, and backend systems for startups and growing teams.",
     card: "summary_large_image",
     images: ["/og.jpg"],
   },
