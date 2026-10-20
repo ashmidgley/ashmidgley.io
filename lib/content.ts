@@ -6,7 +6,7 @@ export const profile = {
   github: "https://github.com/ashmidgley",
   linkedin: "https://www.linkedin.com/in/ashley-midgley/",
   eyebrow: "Software engineer",
-  headline: "Hey, I'm Ash. :wq",
+  headline: "Hey, I'm Ash. I tick PR's and talk to Claude. :wq",
   intro:
     "These days I'm building at Go Places. Before that: Kanexa, Xero, and a stretch of freelancing.",
 };
