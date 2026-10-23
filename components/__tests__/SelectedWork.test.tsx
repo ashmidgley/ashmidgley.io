@@ -19,7 +19,7 @@ describe("SelectedWork", () => {
     const visitLinks = screen.getAllByRole("link", { name: /^Visit / });
     expect(visitLinks).toHaveLength(2);
     expect(visitLinks[0]).toHaveAttribute("href", "https://geobuff.ai");
-    expect(visitLinks[1]).toHaveAttribute("href", "https://boookshelf.xyz/shelf/1");
+    expect(visitLinks[1]).toHaveAttribute("href", "https://boookshelf.xyz");
 
     expect(screen.getByText("AWS ECS/RDS/EventBridge")).toBeInTheDocument();
     expect(screen.getByText("ASP.NET Core")).toBeInTheDocument();

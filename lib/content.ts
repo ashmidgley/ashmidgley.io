@@ -84,7 +84,7 @@ export const projects: Project[] = [
     title: "geobuff.ai",
     subtitle: "Geography Quiz Platform",
     href: "https://geobuff.ai",
-    image: { src: "/images/geobuff.png", alt: "GeoBuff", width: 2365, height: 1349 },
+    image: { src: "/images/geobuff.png", alt: "GeoBuff", width: 2880, height: 1506 },
     summary:
       "Built a multilingual geography quiz product spanning web and mobile, with a strong focus on gameplay quality and scalable content delivery.",
     impact:
@@ -94,7 +94,7 @@ export const projects: Project[] = [
   {
     title: "boookshelf.xyz",
     subtitle: "Bookshelf",
-    href: "https://boookshelf.xyz/shelf/1",
+    href: "https://boookshelf.xyz",
     image: {
       src: "/images/bookshelf.png",
       alt: "Bookshelf",
