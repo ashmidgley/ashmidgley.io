@@ -92,6 +92,17 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Go", "PostgreSQL", "Terraform", "AWS ECS/RDS/EventBridge"],
   },
   {
+    title: "poker-sim-eta.vercel.app",
+    subtitle: "Poker Simulator",
+    href: "https://poker-sim-eta.vercel.app/",
+    image: { src: "/images/poker-sim.png", alt: "Poker Sim", width: 2880, height: 1506 },
+    summary:
+      "Built a No-Limit Hold'em cash game simulator against four styles of bot, with a learning mode that shows every hand face up and explains who is ahead, each player's outs, and pot odds against equity on every street.",
+    impact:
+      "Wrote an event-sourced, seeded poker engine where every hand replays exactly, ran equity in a Web Worker, and covered side pots, rake and chip conservation with 100 tests.",
+    technologies: ["Next.js", "TypeScript", "Neon Postgres", "Drizzle ORM", "Web Workers", "Vercel"],
+  },
+  {
     title: "boookshelf.xyz",
     subtitle: "Bookshelf",
     href: "https://boookshelf.xyz",
